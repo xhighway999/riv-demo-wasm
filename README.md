@@ -18,7 +18,7 @@ index.html?https://example.com/your-video.riv
 Requires [`wasm-pack`](https://rustwasm.github.io/wasm-pack/).
 
 ```sh
-CARGO_NET_GIT_FETCH_WITH_CLI=true wasm-pack build --target web --release
+wasm-pack build --target web --release
 ```
 
 Then serve the directory with any static file server (WASM requires correct MIME type):
