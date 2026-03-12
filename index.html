@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>RIV demo player</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #111;
+      color: #eee;
+      font-family: monospace;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      gap: 1rem;
+      padding: 1rem;
+    }
+    h1 { font-size: 1.1rem; letter-spacing: .1em; color: #aaa; }
+    canvas { image-rendering: pixelated; max-width: 100%; border: 1px solid #333; }
+    #controls { display: flex; gap: .5rem; align-items: center; flex-wrap: wrap; justify-content: center; }
+    button {
+      background: #222; color: #eee; border: 1px solid #444;
+      padding: .3rem .8rem; cursor: pointer; font-family: monospace;
+    }
+    button:hover { background: #333; }
+    input[type=range] { width: 220px; accent-color: #888; }
+    #info { font-size: .75rem; color: #666; }
+    #drop {
+      border: 2px dashed #444; padding: 1.5rem 3rem;
+      color: #555; cursor: pointer; text-align: center;
+    }
+    #drop.over { border-color: #aaa; color: #aaa; }
+  </style>
+</head>
+<body>
+  <h1>RIV demo player</h1>
+  <div id="drop">drop a .riv file here<br><small>or click to browse</small></div>
+  <input id="file-input" type="file" accept=".riv" style="display:none" />
+  <canvas id="canvas" style="display:none"></canvas>
+  <div id="controls" style="display:none">
+    <button id="btn-play">▶ play</button>
+    <span id="info"></span>
+  </div>
+
+  <script type="module" src="player.js"></script>
+</body>
+</html>
